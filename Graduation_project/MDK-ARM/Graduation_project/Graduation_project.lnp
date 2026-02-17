@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"graduation_project\startup_stm32f103xb.o"
+"graduation_project\main.o"
+"graduation_project\gpio.o"
+"graduation_project\tim.o"
+"graduation_project\stm32f1xx_it.o"
+"graduation_project\stm32f1xx_hal_msp.o"
+"graduation_project\stm32f1xx_hal_gpio_ex.o"
+"graduation_project\stm32f1xx_hal_tim.o"
+"graduation_project\stm32f1xx_hal_tim_ex.o"
+"graduation_project\stm32f1xx_hal.o"
+"graduation_project\stm32f1xx_hal_rcc.o"
+"graduation_project\stm32f1xx_hal_rcc_ex.o"
+"graduation_project\stm32f1xx_hal_gpio.o"
+"graduation_project\stm32f1xx_hal_dma.o"
+"graduation_project\stm32f1xx_hal_cortex.o"
+"graduation_project\stm32f1xx_hal_pwr.o"
+"graduation_project\stm32f1xx_hal_flash.o"
+"graduation_project\stm32f1xx_hal_flash_ex.o"
+"graduation_project\stm32f1xx_hal_exti.o"
+"graduation_project\system_stm32f1xx.o"
+--strict --scatter "Graduation_project\Graduation_project.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Graduation_project.map" -o Graduation_project\Graduation_project.axf
