@@ -1,3 +1,15 @@
+本项目使用的硬件为 STM32F407VET6 K230 
+
+This project uses the hardware including: STM32F407VET6 K230
+
+模型: YOLOV7
+
+Model : YOLOV7
+
+UI框架: pyqt5 
+
+System Framework: pyqt5
+
 疲劳驾驶yolo智能检测+PID后驱前舵机转向车道线居中行驶智能小车
 
 Fatigue Driving YOLO Intelligent Detection + PID Rear-Drive Front Servo Steering Lane-Centered Autonomous Vehicle
