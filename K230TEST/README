@@ -1,0 +1,22 @@
+该文件夹包含的是基于K230下，通过K230摄像头进行车道线检测，使用ROI\Canny\Hough等边缘处理反馈至PID算法以此控制MG996R舵机，实现小车始终位居中间的位置。
+
+The folder contains the lane line detection through the K230 camera based on K230, and the edge processing such as ROI\Canny\Hough is used to feed back to the PID algorithm to control the MG996R servo, so that the car is always in the middle position.
+
+该文件夹下有两个子目录：
+K230TEST：
+        --PC
+        --initial_version
+
+PC：
+是在python运行的客户端界面，能够通过H265解码实时显示图传画面，帧率能控制在但目前来说仍有1s左右的延迟，帧率能稳定在20帧左右，总体不影响使用。
+并且还包含了使用mpeg解码来实现视频图传的效果，
+相对比H265，mpeg的延迟更低，但是缺点是帧率较低，只有7帧左右，仍有优化空间。
+mpeg/H265编码的版本都包含了能在开始连接时快速扫描附近IP地址进行连接。
+mpeg的版本带有存储上次连接IP地址的记忆功能，方便开启时迅速建立连接，H265则没有。
+
+目前因为H265编码版本帧率较高，符合小车车道线居中功能要求，故使用的是H265的版本，也进一步增加了对应的功能，
+如：
+    1)可持续等待K230的WIFI连接，不因首次连接失败而阻塞后续连接。
+    2)在pyqt5窗口中添加更清晰的帧率显示以及日志输出。
+    3)增加视频录制和图片截图等基础功能，后续将接入数据库对视频和图片进行保存管理。
+
