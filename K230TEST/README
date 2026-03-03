@@ -7,16 +7,39 @@ K230TEST：
         --PC
         --initial_version
 
-PC：
-是在python运行的客户端界面，能够通过H265解码实时显示图传画面，帧率能控制在但目前来说仍有1s左右的延迟，帧率能稳定在20帧左右，总体不影响使用。
-并且还包含了使用mpeg解码来实现视频图传的效果，
-相对比H265，mpeg的延迟更低，但是缺点是帧率较低，只有7帧左右，仍有优化空间。
-mpeg/H265编码的版本都包含了能在开始连接时快速扫描附近IP地址进行连接。
-mpeg的版本带有存储上次连接IP地址的记忆功能，方便开启时迅速建立连接，H265则没有。
+PC:  
 
-目前因为H265编码版本帧率较高，符合小车车道线居中功能要求，故使用的是H265的版本，也进一步增加了对应的功能，
-如：
-    1)可持续等待K230的WIFI连接，不因首次连接失败而阻塞后续连接。
-    2)在pyqt5窗口中添加更清晰的帧率显示以及日志输出。
-    3)增加视频录制和图片截图等基础功能，后续将接入数据库对视频和图片进行保存管理。
+It is a client interface running in Python, capable of real-time display of video transmission via H.265 decoding. The frame rate can be controlled. Currently, there is still about 1s of latency, but the frame rate can stabilize at around 20 FPS, which generally does not affect normal usage.  
+它是一个在 Python 中运行的客户端界面，能够通过 H.265 解码实时显示图传画面。帧率可控，目前仍存在约 1 秒延迟，但帧率可稳定在 20 帧左右，总体不影响正常使用。
 
+It also includes an implementation of video transmission using MPEG decoding.  
+同时还包含了使用 MPEG 解码实现视频图传的功能。
+
+Compared with H.265, MPEG has lower latency, but the drawback is a lower frame rate, only around 7 FPS, which still has room for optimization.  
+相对 H.265，MPEG 的延迟更低，但缺点是帧率较低，仅约 7 帧，仍有优化空间。
+
+Both the MPEG and H.265 versions include functionality to quickly scan nearby IP addresses during connection initiation.  
+MPEG 和 H.265 版本均支持在开始连接时快速扫描附近 IP 地址以建立连接。
+
+The MPEG version has the memory of the last connected IP address, making it convenient to quickly establish a connection when started; the H.265 version does not have this feature.  
+MPEG 版本具备记忆上次连接 IP 地址的功能，方便启动时快速建立连接；H.265 版本暂无此功能。
+
+Currently, because the H.265 version has a higher frame rate and meets the requirements for lane-centering on the car, the H.265 version is being used, and corresponding features have been further added:  
+目前因为 H.265 版本帧率较高，符合小车车道线居中功能要求，故使用 H.265 版本，并进一步增加了对应功能：
+
+1) It can continuously wait for the K230’s WiFi connection and will not block subsequent connections due to a single initial failure.  
+1) 可持续等待 K230 的 WiFi 连接，不因首次连接失败而阻塞后续连接。
+
+2) Clearer frame rate display and log output have been added in the PyQt5 window.  
+2) 在 PyQt5 窗口中添加了更清晰的帧率显示以及日志输出。
+
+3) Basic functions such as video recording and screenshot capture have been added. Later, a database will be integrated to save and manage videos and images.  
+3) 增加了视频录制和图片截图等基础功能，后续将接入数据库对视频和图片进行保存管理。
+
+initial_version:
+
+This folder contains H265.py and servo.py. The code structure of H265.py is thanks to a CSDN blogger (the blog post returns 404, so here is his homepage for gratitude: https://blog.csdn.net/djjdhdh4664).  
+该文件夹下包含 H265.py 和 servo.py。H265.py 的代码结构感谢 CSDN 博主（博客文章已 404，这里贴出他的主页以示感谢：https://blog.csdn.net/djjdhdh4664）。
+
+It also contains main_combined.py, where the v3 version is an improved version, mainly focusing on reducing video transmission latency and enabling continuous video transmission even if connection failures occur, avoiding the inability to reconnect.  
+同时包含 main_combined.py，其中 v3 版本是改进版本，主要在于降低图传延迟，并能够在连接失败时不中断后续传输，避免无法重连的问题。
